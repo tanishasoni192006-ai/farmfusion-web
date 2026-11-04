@@ -1,0 +1,30 @@
+{
+  "name": "farmfusion-web",
+  "version": "1.0.0",
+  "description": "FarmFusion Web - Smart Farming Advisory Platform (Web Development Mini Project)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "init-db": "node scripts/init-db.js"
+  },
+  "keywords": [
+    "farming",
+    "agriculture",
+    "advisory",
+    "express",
+    "mysql",
+    "bootstrap5",
+    "web-development"
+  ],
+  "author": "B.Tech CSE (AI & ML) Student",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "mysql2": "^3.18.2"
+  }
+}

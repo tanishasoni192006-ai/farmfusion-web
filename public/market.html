@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandi Benchmark Rates & Market Intelligence – FarmFusion Web</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom Theme CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar Navigation -->
+        <aside class="farm-sidebar" id="farmSidebar">
+            <div class="sidebar-brand">
+                <i class="bi bi-flower1"></i> FarmFusion
+            </div>
+
+            <div class="sidebar-profile">
+                <div class="avatar-circle farmer-avatar-initials">F</div>
+                <div class="overflow-hidden">
+                    <h6 class="mb-0 text-white text-truncate farmer-name-display">Farmer</h6>
+                    <small class="text-white-50 text-truncate d-block farmer-location-display">Punjab, India</small>
+                </div>
+            </div>
+
+            <ul class="sidebar-nav">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="bi bi-speedometer2"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="advisory.html" class="nav-link">
+                        <i class="bi bi-compass"></i> Crop Advisory
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="weather.html" class="nav-link">
+                        <i class="bi bi-cloud-sun"></i> Live Weather
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="diseases.html" class="nav-link">
+                        <i class="bi bi-shield-exclamation"></i> Crop Disease Guide
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="reminders.html" class="nav-link">
+                        <i class="bi bi-calendar-check"></i> Irrigation Reminders
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="expenses.html" class="nav-link">
+                        <i class="bi bi-wallet2"></i> Expense Tracker
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="market.html" class="nav-link active">
+                        <i class="bi bi-graph-up-arrow"></i> Mandi Rates
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link">
+                        <i class="bi bi-gear"></i> Farm Settings
+                    </a>
+                </li>
+                <li class="nav-item mt-3">
+                    <a href="index.html" class="nav-link text-white-50">
+                        <i class="bi bi-house"></i> Public Homepage
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <button class="btn btn-outline-light w-100 btn-sm btn-logout d-flex align-items-center justify-content-center gap-2">
+                    <i class="bi bi-power text-danger"></i> Sign Out
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Market View -->
+        <main class="dashboard-main">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-light d-lg-none p-1 px-2 border" id="sidebarToggleBtn" aria-label="Toggle sidebar">
+                        <i class="bi bi-list fs-4"></i>
+                    </button>
+                    <div>
+                        <h5 class="fw-bold mb-0">Agricultural Market Prices & Mandi Intelligence</h5>
+                        <small class="text-muted">Benchmark modal rates across major Indian APMC agricultural markets</small>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-warning-subtle text-warning-emphasis border px-3 py-2 rounded-pill">
+                        <i class="bi bi-info-circle me-1"></i> Agmarknet Benchmark Reference
+                    </span>
+                </div>
+            </header>
+
+            <div class="dashboard-body">
+                <!-- Academic Mandi Notice Banner -->
+                <div class="disclaimer-box">
+                    <i class="bi bi-info-circle-fill me-2"></i>
+                    <strong>Transparent Market Data Notice:</strong>
+                    The commodity values shown below represent structured benchmark reference prices aligned with Agmarknet standards for academic project demonstration. 
+                    In accordance with ethical academic guidelines, this section does not claim live continuous government server scraping.
+                </div>
+
+                <!-- Search & Filter Controls Card -->
+                <div class="farm-card mb-4">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-md-4">
+                            <label for="marketCropFilter" class="form-label mb-1">Filter by Commodity / Crop</label>
+                            <select class="form-select" id="marketCropFilter">
+                                <option value="All" selected>All Commodities</option>
+                                <option value="Wheat">Wheat</option>
+                                <option value="Rice (Paddy)">Rice (Paddy)</option>
+                                <option value="Cotton">Cotton</option>
+                                <option value="Maize (Corn)">Maize (Corn)</option>
+                                <option value="Chickpea (Gram)">Chickpea (Gram)</option>
+                                <option value="Mustard">Mustard</option>
+                                <option value="Tomato">Tomato</option>
+                                <option value="Potato">Potato</option>
+                                <option value="Soybean">Soybean</option>
+                                <option value="Sugarcane">Sugarcane</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="marketStateFilter" class="form-label mb-1">Filter by State</label>
+                            <select class="form-select" id="marketStateFilter">
+                                <option value="All" selected>All States</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="West Bengal">West Bengal</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-5">
+                            <label for="marketSearchInput" class="form-label mb-1">Search Mandi or Variety</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light"><i class="bi bi-search"></i></span>
+                                <input type="text" class="form-control" id="marketSearchInput" placeholder="e.g. Khanna, Basmati, Sharbati, Rajkot...">
+                                <button class="btn btn-outline-secondary" type="button" id="btnClearMarketSearch">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Rates Table Card -->
+                <div class="farm-card">
+                    <div class="table-responsive">
+                        <table class="table table-farm align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Commodity</th>
+                                    <th>Variety</th>
+                                    <th>Mandi / Market Yard</th>
+                                    <th>District & State</th>
+                                    <th>Min Price</th>
+                                    <th>Max Price</th>
+                                    <th>Modal Rate</th>
+                                    <th>Trend</th>
+                                    <th>Benchmark Source</th>
+                                </tr>
+                            </thead>
+                            <tbody id="marketPricesTableBody">
+                                <tr>
+                                    <td colspan="9" class="text-center text-muted py-5">
+                                        <div class="spinner-border text-success" role="status"></div>
+                                        <p class="mt-2">Loading Mandi price records...</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/market.js"></script>
+</body>
+</html>
